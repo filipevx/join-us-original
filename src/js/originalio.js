@@ -12,8 +12,8 @@ $( document ).ready(function() {
 	  slidesToShow: 4,
 	  slidesToScroll: 4
 	});	
-    $('.js-modal-open, .close-button, .overlay-modal').click(function(){ 
+    $('.js-modal-open, .icon-close, .overlay-modal, .finish-btn, .keepbuy-btn').click(function(){ 
     	$('.modal').toggleClass('modal--open')
     	$('.overlay-modal').toggleClass('overlay-modal--open')
-    });	
+    });  
 });

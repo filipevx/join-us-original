@@ -3,12 +3,59 @@
     top: -100%; 
     left: 50%;
     z-index: 1010;
-    width: 300px;
-    height: 300px;
-    background: red;
+    width: 445px;
+    height: 600px;
+    background: $white;
     transform: translate(-50%, -50%);
+    transition: .4s;
+    padding: 35px 75px;
     &--open {
     	top: 50%;
+    }
+    img {
+    	position: relative;
+    }
+    .icon-close {
+	    position: absolute;
+	    top: 15px;
+	    right: 20px;
+	    cursor: pointer;
+	    transition: .4s;
+	    &:hover {
+	    	opacity: .5;
+	    }  	
+    }
+    .sucess {
+    	color: $primary;
+    	font-size: 22px;
+    	font-family: "Gotham Bold";
+    	text-transform: uppercase;
+	    display: block;
+	    width: 50%;    	
+    }
+    .finish-btn {
+		display: block; 
+		width: 100%;
+		height: 50px;
+		font-size: 14px;
+		color: $white;
+		background: $lochinvar;
+		border-radius: 5px;
+		margin: 0 auto;
+		text-transform: uppercase;
+		transition: .4s;
+		&:hover {
+			background: $primary;
+		}       	
+    }
+    .keepbuy-btn {
+    	font-family: "Gotham Book";
+    	display: block;
+    	text-align: center;
+    	text-decoration: underline;
+    	color: $cadet-blue;
+    	width: 100%;
+    	margin-top: 20px;
     }
 }
 .overlay-modal {
@@ -17,7 +64,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(32, 32, 32, .6);
     z-index: 1000;
     &--open {
     	top: 0;
