@@ -96,6 +96,14 @@ table {
 	border-spacing: 0;
 }
 
+button {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer; 
+
+}
+
 *,
 *::before,
 *::after { box-sizing: inherit; }

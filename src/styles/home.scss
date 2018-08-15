@@ -36,10 +36,6 @@
 						margin: 5px 0;						
 					}
 					.slick-arrow {
-						border: none;
-						background: transparent;
-						outline: none;
-						cursor: pointer;
 						transition: .4s;
 						&:hover {
 							opacity: .6;
@@ -64,7 +60,7 @@
 				border: 2px solid $cadet-blue;
 				width: 440px;
 				&__name {
-					font-family: "Gothan Bold";
+					font-family: "Gotham Bold";
 					font-size: 26px;
 					text-transform: uppercase;
 					font-weight: 700;
@@ -75,8 +71,207 @@
 					color: $mine-shaft;
 					margin-bottom: 25px;
 				}
-			}		
+				&__price {
+					margin-bottom: 50px;
+					&--de,
+					&--por {
+						display: inline-block;
+					}
+					&--por {
+						color: $secondary;
+						font-size: 20px;
+						font-family: "Gotham Bold";
+						&:before { 
+							font-family: "Open Sans";
+							content: "| ";
+							color: $cinnabar;
+							font-size: 14px; 
+						}						
+					}
+					&--de {
+						color: $cinnabar;
+						text-decoration: line-through;
+					}
+					&--parc {
+						font-size: 12px;
+						color: $gray;
+						margin-top: 10px;
+					}
+				}
+				&__color {
+					margin-bottom: 35px;
+					.color-info {
+						span {
+							display: inline-block;
+						}
+						&__name {
+							display: inline-block;
+    						margin-left: 10px;
+    						color: #6B85C1;
+						}
+					}
+					.color-btns {
+						margin: 20px 0;
+						li {
+							display: inline-block;
+							margin-right: 15px;
+							
+						}
+						&__button {
+							height: 22px;
+							width: 22px;
+							border-radius: 50%;
+							position: relative;
+							&--select {
+								border: 1px solid $white;
+								&:after {
+									content: "";
+									height: 32px;
+									width: 32px;
+									border-radius: 50%; 
+									position: absolute;
+									background: $zombie;
+									z-index: -1;	
+								    bottom: -6px;
+								    right: -6px;					
+								}
+							}
+							&--fucsia {
+								background: #6B85C1;
+							}
+							&--pink {
+								background: #A9095E;
+							}
+							&--orange {
+								background: #A14830;
+							}
+							&--black {
+								background: $black;
+							}
+						}
+					}	
+				}
+				&__size {
+					margin-bottom: 35px;
+					.size-info {
+						span {
+							display: inline-block;
+						}
+						&__num {
+							display: inline-block;
+    						margin-left: 10px;
+    						color: #6B85C1;
+						}
+					}
+					.size-btns {
+						margin: 20px 0;
+						li {
+							display: inline-block;
+							margin-right: 4px;	
+						}
+						&__button {
+							height: 35px;
+							width: 35px;
+							border-radius: 50%;
+							position: relative;
+							background: $gallery;
+							color: $casal;
+							&--select {
+								background: $zombie;
+							}	
+						}
+					}
+				}
+				&__buy {
+					.buy-btn {
+						display: block; 
+						width: 100%;
+						height: 60px;
+						font-size: 18px;
+						color: $white;
+						background: $lochinvar;
+						border-radius: 5px;
+						margin: 0 auto;
+						text-transform: uppercase;
+						transition: .4s;
+						&:hover {
+							background: $primary;
+						}
+					}						
+				}
+				&__description {
+					color: $mine-shaft;
+	    			line-height: 25px;
+	    			margin-top: 15px;
+				}	
+			}							
 		}		
+	}
+	.qvvtb	{
+		margin-bottom: 200px;
+		&__title {
+			font-family: "Gotham Book";
+			font-size: 26px;
+			text-transform: uppercase;
+			color: $primary;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		&__carousel {
+			.carousel-img {
+				width: 285px !important;
+				height: auto;
+				img {
+					width: 100%;
+				}
+			}
+			.slick-dots {
+				text-align: center;
+				margin-top: 30px;
+				li {
+					display: inline-block;
+				}
+			}
+			.slick-arrow {
+				display: none !important;
+			}
+		}
+		&__price {
+			margin-top: 10px;
+			span {
+				display: inline-block;
+				font-size: 16px;
+				color: $mine-shaft;
+				width: 50%;
+
+			}
+			.colors-prateleira {
+				display: inline-block;
+			    width: 48%;
+			    text-align: right;				
+				li {
+					display: inline-block;
+				}
+				&__icon {
+					width: 13px;
+					height: 13px; 
+					display: block;
+					border-radius: 50%;
+					&--fucsia {
+						background: #6B85C1;
+					}
+					&--pink {
+						background: #A9095E;
+					}
+					&--orange {
+						background: #A14830;
+					}
+					&--black {
+						background: $black;
+					}					
+				}
+			}
+		}
 	}
 	.slick-carousel img {
 		width: 75px;
