@@ -1,3 +1,84 @@
 .home {
-
+	.breadcrumb {
+		display: block;
+		margin: 10px 0;
+		color: $cadet-blue;
+		font-size: 12px;
+		span {
+			&:after {
+				content: 'Sapatos';
+				font-weight: 700;
+			}
+		}
+	}
+	.product {
+		margin: 20px 0 100px;
+		@include clearfix;
+		&__image {
+			@include column(1/2, $cycle: 2);
+			position: relative;			
+		}
+		&__thumbs {
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 75px;
+			li {
+				margin: 5px 0;
+				text-align: center;
+				color: $primary;
+				font-size: 12px;
+				.carousel {
+					img {
+						width: 100%;
+						height: auto;
+						margin: 5px 0;						
+					}
+					.slick-arrow {
+						border: none;
+						background: transparent;
+						outline: none;
+						cursor: pointer;
+						transition: .4s;
+						&:hover {
+							opacity: .6;
+						}
+					}
+				}
+				i {
+					display: block;
+				}
+			}
+		}
+		&__image-main {
+			display: inline-block;
+			margin-left: 170px;
+		}
+		&__info {
+			@include column(1/2, $cycle: 2);	
+			.product-info {
+				display: block;
+    			margin: 0 auto;				
+				padding: 20px;
+				border: 2px solid $cadet-blue;
+				width: 440px;
+				&__name {
+					font-family: "Gothan Bold";
+					font-size: 26px;
+					text-transform: uppercase;
+					font-weight: 700;
+				    margin-bottom: 5px;
+				    color: $mine-shaft;	
+				}
+				&__cod {
+					color: $mine-shaft;
+					margin-bottom: 25px;
+				}
+			}		
+		}		
+	}
+	.slick-carousel img {
+		width: 75px;
+	}	
 }

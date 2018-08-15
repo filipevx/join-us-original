@@ -6,6 +6,7 @@ var runSequence = require('run-sequence');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
+var copyFolders = require('copy');
 const imagemin = require('imagemin');
 const imageminJpegtran = require('imagemin-jpegtran');
 const imageminPngquant = require('imagemin-pngquant');
@@ -31,6 +32,12 @@ var htmlDest = 'build/template';
 var sassProd = {
   outputStyle: 'compressed'
 }
+
+//copy
+// svg
+var svgDest = 'build/svg';
+var svgFiles = './src/svg/*.svg';
+
 
 
 // Tasks
@@ -64,6 +71,12 @@ gulp.task('compress', function (cb) {
 // Clean
 gulp.task('clean', () => del(['build']));
 
+//Copy
+gulp.task('copy', function () {
+    gulp.src('./src/svg/*.svg')
+        .pipe(gulp.dest(svgDest));
+});
+
 //imagemin
 gulp.task('imagemin', function() {
   imagemin(['./src/img/*.{jpg,png}'], 'build/img', {
@@ -81,7 +94,8 @@ gulp.task('imagemin', function() {
 gulp.task('watch', function() {
   gulp.watch(scssFiles, ['sassprod']);
   gulp.watch(pugFiles, ['gulppug']);
-  gulp.watch(jsFiles, ['compress']);  
+  gulp.watch(jsFiles, ['compress']); 
+  gulp.watch(svgFiles, ['copy']);  
   gulp.watch(pugFiles, ['imagemin']);
 });
 
@@ -92,6 +106,7 @@ gulp.task('default', ['clean'], function () {
     'sassprod',
     'compress',
     'watch',
+    'copy',
     'imagemin'
   );
 });

@@ -11,6 +11,8 @@ html(xmlns="http://www.w3.org/1999/xhtml", lang="pt-br")
     meta(name="format-detection", content="telephone=no")
     link(href="../css/style.min.css" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="../js/slick.js" type="text/javascript")
     script(src="../js/originalio.js" type="text/javascript")
 
     block head
@@ -22,7 +24,61 @@ html(xmlns="http://www.w3.org/1999/xhtml", lang="pt-br")
 
     main
       block content
-    
+        .container
+          .breadcrumb
+            span Home / 
+          .product
+            .product__image
+              ul.product__thumbs
+                li
+                  a(href="#")
+                    span Vídeo
+                    i
+                      include ../svg/icon-play-circle.svg
+                li                
+                  .carousel
+                    .carousel-img
+                      img(src="../img/prod02.jpg")
+                    .carousel-img
+                      img(src="../img/prod02.jpg")
+                    .carousel-img
+                      img(src="../img/prod02.jpg")
+                    .carousel-img
+                      img(src="../img/prod02.jpg")
+                    .carousel-img
+                      img(src="../img/prod02.jpg")
+                    .carousel-img
+                      img(src="../img/prod02.jpg")
+                    .carousel-img
+                      img(src="../img/prod02.jpg")
+                    .carousel-img
+                      img(src="../img/prod02.jpg")                                                                       
+              img.product__image-main(width="430px" height="auto" src="../img/prod02.jpg")
+            .product__info
+              .product-info
+                h3.product-info__name rasteira tira dedo
+                .product-info__cod RT 0568 | 03.07.0653
+                .product-info__price
+                  .product-info__price--de R$ 69,00 |
+                  .product-info__price--por R$ 55,20
+                  .product-info__price--parc Ou 6x de R$9,20
+                .product-info__color
+                  .color-info
+                    span Cor:
+                    .color-info__name (Fucsia)
+                  ul.color-btns
+                    li
+                      .color-btns__button.color-btns__button--fucsia
+                    li
+                      .color-btns__button.color-btns__button--fucsia
+                    li
+                      .color-btns__button.color-btns__button--fucsia
+                    li
+                      .color-btns__button.color-btns__button--fucsia
+                .product-info__size
+                .product-info__buy
+            .product__description
+   
     footer
       include ./Footer
     
