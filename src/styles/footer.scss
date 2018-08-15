@@ -1,0 +1,35 @@
+.footer {
+	border-top: 1px solid $silver;
+	&__container {
+		position: relative;  
+		height: 230px;
+		padding: 20px 30px;
+	}
+	&__social {
+		@include column(2/12);
+		.social-icons {
+	        &:hover {
+	            a {
+	                opacity: .35;
+	                &:hover {
+	                    opacity: 1;
+	                } 
+	            }
+	        }		
+			&__link {
+				display: inline-block; 
+				margin-left: 30px;
+			}
+		}
+	}
+	&__menu {
+		@include column(2/12);
+		&--lg {
+			@include column(3/12); 
+		}
+	}
+	&__copyright {
+		height: 60px;
+		background: $primary;
+	}
+}

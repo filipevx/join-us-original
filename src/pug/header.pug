@@ -1,0 +1,33 @@
+.header
+	.header__top
+		a.header__logo(href="./index.html")
+			i
+				include ../svg/icon-original.svg
+	.header__container
+		.container
+			.header__account
+				a.account-item.account-item--login(href="#") Entrar
+				a.account-item(href="#") Cadastrar-se
+			.header__menu
+				ul
+					li.menu-item
+						a.menu-item__link(href="#") sapatos
+					li.menu-item
+						a.menu-item__link(href="#") bolsas
+					li.menu-item
+						a.menu-item__link(href="#") acessorios
+					li.menu-item
+						a.menu-item__link(href="#") off		
+			.header__menu-right
+				.search-bar
+					label
+						i.icon-search
+							include ../svg/icon-search.svg
+						input(type="text" placeholder="Busca")
+
+				a.cart(href="#")
+					i.icon-cart
+						include ../svg/icon-cart.svg
+					span 0
+	
+
