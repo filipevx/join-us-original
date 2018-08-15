@@ -6,6 +6,9 @@ var runSequence = require('run-sequence');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
+const imagemin = require('imagemin');
+const imageminJpegtran = require('imagemin-jpegtran');
+const imageminPngquant = require('imagemin-pngquant');
 
 
 //Variaveis
@@ -61,11 +64,25 @@ gulp.task('compress', function (cb) {
 // Clean
 gulp.task('clean', () => del(['build']));
 
+//imagemin
+gulp.task('imagemin', function() {
+  imagemin(['./src/img/*.{jpg,png}'], 'build/img', {
+      plugins: [
+          imageminJpegtran(),
+          imageminPngquant({quality: '65-80'})
+      ]
+  }).then(files => {
+      console.log(files);
+      //=> [{data: <Buffer 89 50 4e …>, path: 'build/images/foo.jpg'}, …] 
+  });
+}); 
+
 // watch
 gulp.task('watch', function() {
   gulp.watch(scssFiles, ['sassprod']);
   gulp.watch(pugFiles, ['gulppug']);
   gulp.watch(jsFiles, ['compress']);  
+  gulp.watch(pugFiles, ['imagemin']);
 });
 
 // Gulp task
@@ -74,6 +91,7 @@ gulp.task('default', ['clean'], function () {
     'gulppug',
     'sassprod',
     'compress',
-    'watch'
+    'watch',
+    'imagemin'
   );
 });
