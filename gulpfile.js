@@ -38,6 +38,9 @@ var sassProd = {
 var svgDest = 'build/svg';
 var svgFiles = './src/svg/*.svg';
 
+var fontsDest = 'build/fonts';
+var fontsFiles = './src/fonts/*.otf';
+
 
 
 // Tasks
@@ -75,6 +78,8 @@ gulp.task('clean', () => del(['build']));
 gulp.task('copy', function () {
     gulp.src('./src/svg/*.svg')
         .pipe(gulp.dest(svgDest));
+    gulp.src('./src/fonts/*.otf')
+        .pipe(gulp.dest(fontsDest));        
 });
 
 //imagemin
